@@ -23,9 +23,9 @@ public class CricketGameController {
 			}
 			
 			runsNeeded -= score.getScore();
-			
-			//rotate strike
-			if(score.getScore()%2==1){
+			ballsRemaining--;
+			//rotate strike - when odd numbered runs are scored, or over changes.
+			if(score.getScore()%2 == 1 || ballsRemaining%6 == 0){
 				Batsman temp = striker;
 				striker = nonStriker;
 				nonStriker = temp;
